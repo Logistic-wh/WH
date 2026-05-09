@@ -2,89 +2,53 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ระบบอบรมพนักงานขับรถ BKC</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- ส่วนสำคัญ: ตั้งค่า Logo สำหรับการปักหมุดหน้าจอ (Add to Home Screen) -->
+    <!-- สำหรับ iPhone / iOS -->
+    <link rel="apple-touch-icon" href="https://img1.pic.in.th/images/ChatGPT-Image-May-9-2026-10_42_59-AM.png">
+    <!-- สำหรับ Android และ Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://img1.pic.in.th/images/ChatGPT-Image-May-9-2026-10_42_59-AM.png">
+    <link rel="shortcut icon" href="https://img1.pic.in.th/images/ChatGPT-Image-May-9-2026-10_42_59-AM.png">
+    <!-- สำหรับ Windows -->
+    <meta name="msapplication-TileImage" content="https://img1.pic.in.th/images/ChatGPT-Image-May-9-2026-10_42_59-AM.png">
+
     <style>
-        body {
-            font-family: 'Sarabun', sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* ป้องกัน scrollbar ซ้ำซ้อนที่ตัวบอดี้ */
-            background-color: #f3f4f6;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* ป้องกันการเลื่อนที่ตัว Body */
+            background-color: #ffffff;
         }
-        .app-header {
-            height: 64px;
-            background: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            padding: 0 1rem;
-            position: fixed;
+
+        .main-container {
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 50;
-        }
-        .iframe-container {
-            position: absolute;
-            top: 64px; /* เท่ากับความสูงของ Header */
-            left: 0;
+            bottom: 0;
             width: 100%;
-            height: calc(100vh - 64px);
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
             border: none;
-        }
-        .logo-img {
-            height: 40px;
-            width: auto;
-            border-radius: 8px;
-            margin-right: 12px;
-            object-fit: contain;
-        }
-        @media (max-width: 640px) {
-            .app-title {
-                font-size: 1rem;
-            }
-            .app-header {
-                height: 56px;
-            }
-            .iframe-container {
-                top: 56px;
-                height: calc(100vh - 56px);
-            }
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <header class="app-header flex justify-between items-center px-4 md:px-8">
-        <div class="flex items-center">
-            <!-- ใส่โลโก้ -->
-            <img 
-                src="https://img1.pic.in.th/images/ChatGPT-Image-May-9-2026-10_42_59-AM.png" 
-                alt="BKC Logo" 
-                class="logo-img"
-                onerror="this.src='https://placehold.co/40x40/0044cc/ffffff?text=BKC'"
-            >
-            <!-- ชื่อแอป -->
-            <h1 class="app-title font-semibold text-gray-800 text-lg md:text-xl truncate">
-                ระบบอบรมพนักงานขับรถ BKC
-            </h1>
-        </div>
-        
-        <!-- ส่วนเพิ่มเติมเผื่อต้องการใส่ปุ่มหรือเมนูในอนาคต -->
-        <div class="hidden md:block">
-            <span class="text-sm text-gray-500">BKC Training System v1.0</span>
-        </div>
-    </header>
-
-    <div class="iframe-container">
+    <div class="main-container">
         <iframe 
             src="https://script.google.com/macros/s/AKfycby23eQxb5fwP46Ls6A151lF--qISlaBNQsPThNsRL786rRlHEqPawEXns7gbOoi0wXoNA/exec" 
-            style="width: 100%; height: 100%; border: 0;"
-            allow="geolocation; microphone; camera"
-            title="BKC Content"
+            allow="geolocation; microphone; camera; clipboard-read; clipboard-write"
+            title="BKC Training Content"
         ></iframe>
     </div>
 
